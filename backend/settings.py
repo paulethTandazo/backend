@@ -16,14 +16,6 @@ from pathlib import Path
 import firebase_admin 
 from firebase_admin import credentials
 
-# Coloque la ruta relativa al archivo con la clave privada
-FIREBASE_CRED = credentials.Certificate("keys/landing-key.json")
-
- # Inicialice la conexión con el Realtime Database con la clave privada y la URL de referencia
-firebase_admin.initialize_app(FIREBASE_CRED, {
-     'databaseURL': 'https://meowjapan-6937c-default-rtdb.firebaseio.com/'
- })
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -141,3 +133,10 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Coloque la ruta relativa al archivo con la clave privada
+FIREBASE_CRED = credentials.Certificate("keys/landing-key.json")
+
+ # Inicialice la conexión con el Realtime Database con la clave privada y la URL de referencia
+firebase_admin.initialize_app(FIREBASE_CRED, {
+     'databaseURL': 'https://meowjapan-6937c-default-rtdb.firebaseio.com/'
+ })
