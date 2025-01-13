@@ -3,7 +3,7 @@
     <h2
       class="my-6 text-2xl font-semibold text-gray-700 dark:text-gray-200">
       <!-- START - title -->
-      Dashboard
+      {{ title }}
       <!-- END - title -->
     </h2>
 
@@ -27,7 +27,7 @@
           <p
             class="text-lg font-semibold text-gray-700 dark:text-gray-200">
             <!-- START - total_responses -->
-            XXX
+            {{ total_responses }}
             <!-- END - total_responses -->
           </p>
         </div>
@@ -123,18 +123,20 @@
             class="bg-white divide-y dark:divide-gray-700 dark:bg-gray-800">
 
             <!-- START - responses -->
+            {% for row in responses %}
             <tr class="text-gray-700 dark:text-gray-400">
-              <td class="px-4 py-3 text-sm">
-                <!-- START - row.email -->
-                correo@gmail.com
-                <!-- END - row.email -->
-              </td>
-              <td class="px-4 py-3 text-sm">
-                <!-- START - row.saved -->
-                31/12/2021 23:59:59
-                <!-- END - row.saved -->
-              </td>
+                <td class="px-4 py-3 text-sm">
+                    <!-- START - row.email -->
+                    {{ row.message }}
+                    <!-- END - row.email -->
+                </td>
+                <td class="px-4 py-3 text-sm">
+                    <!-- START - row.saved -->
+                    {{ row.subject }}
+                    <!-- END - row.saved -->
+                </td>
             </tr>
+            {% endfor %}
             <!-- END - responses -->
 
           </tbody>
@@ -144,7 +146,7 @@
         class="grid px-4 py-3 text-xs font-semibold tracking-wide text-gray-500 uppercase border-t dark:border-gray-700 bg-gray-50 sm:grid-cols-9 dark:text-gray-400 dark:bg-gray-800">
         <span class="flex items-center col-span-3">
           <!-- START - total_responses_table -->
-          XXX
+          {{ total_responses }}
           <!-- END - total_responses_table -->
           respuestas
         </span>
